@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<widgets>
+    <catprodreviews_list type="catprodreviews/list" module="catprodreviews">
+        <name>Product category latest reviews</name>
+        <description type="desc">Latest reviews of products from current category</description>
+        <parameters>
+            <reviews_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>5</value>
+                <label>Number of Reviews to Display</label>
+                <type>text</type>
+            </reviews_count>
+            <template>  
+                <visible>0</visible>  
+                <value>catprodreviews/list.phtml</value>  
+            </template> 
+        </parameters>
+    </catprodreviews_list>
+</widgets> 

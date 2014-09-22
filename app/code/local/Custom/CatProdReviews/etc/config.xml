@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <modules>
+        <Custom_CatProdReviews>
+            <version>1.0.0</version>
+        </Custom_CatProdReviews>
+    </modules>
+    <global>
+        <helpers>
+            <catprodreviews>
+                <class>Custom_CatProdReviews_Helper</class>
+            </catprodreviews>
+        </helpers>
+        <blocks>
+            <catprodreviews>
+                <class>Custom_CatProdReviews_Block</class>
+            </catprodreviews>
+        </blocks>
+    </global>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_CatProdReviews>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Core />
+                <Mage_Catalog />
+                <Mage_Review />
+            </depends>
+        </Custom_CatProdReviews>
+    </modules>
+</config>

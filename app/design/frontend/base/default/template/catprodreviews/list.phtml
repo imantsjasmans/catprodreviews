@@ -1,0 +1,33 @@
+<?php $_items = $this->getReviews();?>
+<?php if (count($_items)):?>
+    <div class="block reviews-block">
+        <h2 class="title"><?php echo $this->__('Customer Reviews') ?></h2>   
+        <ul class="reviews" >
+            <?php foreach ($_items as $_review):?>
+                <li class="item dontsplit">
+                    <div class="wrap"> 
+                        <span class="date"><?php echo $this->formatDate($_review->getCreatedAt(), 'medium', false) ?></span>
+                        <span class="comment"><strong>&ldquo;</strong><?php echo nl2br($this->htmlEscape($_review->getDetail())) ?><strong>&rdquo;</strong></span>
+                        <div class="decor"></div>
+                    </div>
+                    <div class="author"><?php echo $this->htmlEscape($_review->getNickname()) ?></div>
+                       
+                    <?php $_votes = $_review->getRatingVotes(); ?>
+                    <?php if (count($_votes)): ?>
+                        <?php foreach ($_votes as $_vote): ?>
+                            <div class="rate" id="review<?php echo $_review->getId()?>_rate_<?php echo $this->escapeHtml($_vote->getRatingCode()) ?>"></div> 
+                             <script type="text/javascript" language="javascript" >
+                                $j('#review<?php echo $_review->getId()?>_rate_<?php echo $this->escapeHtml($_vote->getRatingCode()) ?>').raty({
+                                    readOnly  : true,
+                                    score: <?php echo round(0.05*$_vote->getPercent()) ?>,
+                                    starOff: '<?php echo $this->getSkinurl('images/staroff.png'); ?>',
+                                    starOn : '<?php echo $this->getSkinurl('images/staron.png'); ?>',
+                                });
+                            </script>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif;?>
